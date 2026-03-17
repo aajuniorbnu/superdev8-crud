@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Produtos</title>
+  <link rel="stylesheet" href="/assets/css/mercado.css">
+</head>
+<body>
+  <main class="page">
+    <section class="panel form-panel">
+      <div class="panel-header">
+        <p class="eyebrow">Mercado</p>
+        <h1>Cadastro de produtos</h1>
+        <p class="subtitle">Preencha os dados do produto e salve para adicionar à tabela.</p>
+      </div>
+
+      <form id="product-form" class="product-form">
+        <input type="hidden" id="product-id">
+
+        <label class="field">
+          <span>Nome do produto</span>
+          <input type="text" id="nome" placeholder="Ex.: Arroz 5kg" required>
+        </label>
+
+        <fieldset class="field category-group">
+          <legend>Categoria</legend>
+          <div class="radio-grid">
+            <label class="radio-card">
+              <input type="radio" name="categoria" value="Alimentos" required>
+              <span>Alimentos</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="categoria" value="Bebidas">
+              <span>Bebidas</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="categoria" value="Limpeza">
+              <span>Limpeza</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="categoria" value="Higiene">
+              <span>Higiene</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="field-row">
+          <label class="field">
+            <span>Preço</span>
+            <input type="number" id="preco" min="0" step="0.01" placeholder="0,00" required>
+          </label>
+
+          <label class="field">
+            <span>Quantidade em estoque</span>
+            <input type="number" id="quantidade" min="0" step="1" placeholder="0" required>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary" id="save-button">Salvar</button>
+          <button type="button" class="btn btn-secondary" id="cancel-button">Cancelar edição</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel table-panel">
+      <div class="panel-header">
+        <p class="eyebrow">Controle</p>
+        <h2>Produtos cadastrados</h2>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nome do produto</th>
+              <th>Categoria</th>
+              <th>Preço</th>
+              <th>Quantidade em estoque</th>
+              <th>Valor total em estoque</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="product-table-body">
+            <tr class="empty-row">
+              <td colspan="7">Nenhum produto cadastrado.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/js/mercado.js"></script>
+</body>
+</html>
