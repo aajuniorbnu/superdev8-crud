@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Veículos</title>
+    <link rel="stylesheet" href="/assets/css/garagem.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cadastro de Veículos</h1>
+
+        <label>Modelo:</label>
+        <input type="text" id="modelo">
+
+        <label>Marca:</label>
+        <input type="text" id="marca">
+
+        <label>Ano:</label>
+        <input type="number" id="ano">
+
+        <label>Valor:</label>
+        <input type="number" id="valor">
+
+        <label>Quantidade de Portas:</label>
+        <div class="radios">
+            <input type="radio" name="portas" value="2"> 2
+            <input type="radio" name="portas" value="3"> 3
+            <input type="radio" name="portas" value="4"> 4
+            <input type="radio" name="portas" value="5"> 5
+        </div>
+
+        <button onclick="salvar()">Salvar</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Modelo</th>
+                    <th>Marca</th>
+                    <th>Ano</th>
+                    <th>Valor</th>
+                    <th>Portas</th>
+                    <th>Idade</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaVeiculos"></tbody>
+        </table>
+    </div>
+
+    <script src="/assets/js/garagem.js"></script>
+</body>
+</html>
