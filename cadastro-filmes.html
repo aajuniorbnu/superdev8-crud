@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Filmes</title>
+    <link rel="stylesheet" href="/assets/css/cadastro-filmes">
+</head>
+<body>
+
+<div class="container">
+    <h1>Cadastro de Filmes</h1>
+
+    <div class="form">
+        <input type="hidden" id="codigo">
+
+        <label>Nome do Filme</label>
+        <input type="text" id="nome">
+
+        <label>Gênero</label>
+        <input type="text" id="genero">
+
+        <label>Duração (minutos)</label>
+        <input type="number" id="duracao">
+
+        <label>Faixa Etária</label>
+        <div class="radio-group">
+            <label><input type="radio" name="faixa" value="Livre"> Livre</label>
+            <label><input type="radio" name="faixa" value="10+"> 10+</label>
+            <label><input type="radio" name="faixa" value="12+"> 12+</label>
+            <label><input type="radio" name="faixa" value="16+"> 16+</label>
+            <label><input type="radio" name="faixa" value="18+"> 18+</label>
+        </div>
+
+        <button onclick="salvar()">Salvar</button>
+        <button onclick="limpar()">Limpar</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Gênero</th>
+                <th>Duração</th>
+                <th>Faixa Etária</th>
+                <th>Classificação</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaFilmes"></tbody>
+    </table>
+</div>
+
+<script src="/assets/js/cadastro-filmes.js"></script>
+</body>
+</html>
