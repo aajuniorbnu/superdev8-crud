@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Pedidos</title>
+    <link rel="stylesheet" href="/assets/css/pedidos-lanchonete.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cadastro de Pedidos</h1>
+
+        <label>Nome do Cliente</label>
+        <input type="text" id="cliente">
+
+        <label>Nome do Lanche</label>
+        <input type="text" id="lanche">
+
+        <label>Quantidade</label>
+        <input type="number" id="quantidade">
+
+        <label>Preço Unitário</label>
+        <input type="number" id="preco" step="0.01">
+
+        <button onclick="salvar()">Salvar</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Cliente</th>
+                    <th>Lanche</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unitário</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaPedidos"></tbody>
+        </table>
+    </div>
+
+    <script src="/assets/js/pedidos-lanchonete.js"></script>
+</body>
+</html>
