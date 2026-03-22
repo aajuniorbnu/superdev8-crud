@@ -1,0 +1,53 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard de Viagens</title>
+  <link rel="stylesheet" href="/assets/css/viagens.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Dashboard de Viagens</h1>
+
+    <div class="cards">
+      <div class="card">
+        <h2>Total de Viagens</h2>
+        <span id="totalViagens">0</span>
+      </div>
+      <div class="card">
+        <h2>Total Arrecadado</h2>
+        <span id="totalValor">R$ 0</span>
+      </div>
+      <div class="card">
+        <h2>Passageiros</h2>
+        <span id="totalPassageiros">0</span>
+      </div>
+    </div>
+
+    <div class="form">
+      <input type="text" id="destino" placeholder="Destino">
+      <input type="number" id="distancia" placeholder="Km">
+      <input type="number" id="passageiros" placeholder="Passageiros">
+      <input type="number" id="valor" placeholder="Valor">
+      <button onclick="salvar()">Salvar</button>
+    </div>
+     <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Destino</th>
+          <th>Km</th>
+          <th>Passageiros</th>
+          <th>Valor</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="tabela"></tbody>
+    </table>
+
+  </div>
+
+  <script src="/assets/js/viagens.js"></script>
+</body>
+</html>
