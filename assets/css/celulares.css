@@ -1,0 +1,96 @@
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg, #f2f2f2, #e0e0e0);
+    color: #333;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #ff6a00;
+}
+
+/* FORM */
+.form {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #ff6a00;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255,106,0,0.3);
+}
+
+/* BOTÕES */
+button {
+    background: linear-gradient(135deg, #ff6a00, #ff8c00);
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #e65c00, #ff6a00);
+}
+
+/* TABELA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+th {
+    background: linear-gradient(135deg, #ff6a00, #ff8c00);
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+tr:hover {
+    background: #fff3e6;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    table {
+        font-size: 12px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 5px;
+    }
+}

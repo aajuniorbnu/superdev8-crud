@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Celulares</title>
+    <link rel="stylesheet" href="/assets/css/celulares.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Cadastro de Celulares 📱</h1>
+
+    <div class="form">
+        <input type="hidden" id="codigo">
+
+        <label>Marca</label>
+        <input type="text" id="marca">
+
+        <label>Modelo</label>
+        <input type="text" id="modelo">
+
+        <label>Valor (R$)</label>
+        <input type="number" id="valor">
+
+        <label>Quantidade em Estoque</label>
+        <input type="number" id="quantidade">
+
+        <button onclick="salvar()">Salvar</button>
+        <button onclick="limpar()">Limpar</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Valor</th>
+                <th>Quantidade</th>
+                <th>Total em Estoque</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaCelulares"></tbody>
+    </table>
+</div>
+
+<script src="/assets/js/celulares.js"></script>
+</body>
+</html>
