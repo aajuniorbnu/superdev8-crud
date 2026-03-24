@@ -1,58 +1,79 @@
-let viagens = [];
-let codigo = 1;
+let listaDeViagens = [];
+let proximoCodigo = 1;
 
-function salvar() {
-  let destino = document.getElementById("destino").value;
-  let distancia = Number(document.getElementById("distancia").value);
-  let passageiros = Number(document.getElementById("passageiros").value);
-  let valor = Number(document.getElementById("valor").value);
+function salvarViagem(){
+let destino = document.getElementById('destino').value;
+let distancia = Number(document.getElementById('distancia').value);
+let passageiros = Number(document.getElementById('passageiros').value);
+let valorPorPessoa = Number(document.getElementById('valor').value);
 
-  if (!destino || !distancia || !passageiros || !valor) {
-    alert("Preencha tudo");
-    return;
+let fomularioIcompleto = !destino || !distancia || !passageiros || !valorPorPessoa;
+
+if(fomularioIcompleto){
+  alert("Preencha todos os campos antes de salvar");
+  return;
+}
+
+let valorTotal = passageiros * valorPorPessoa;
+
+//criar objeto da viagem (com indentificador unico)
+
+let novaViagem ={
+codigo : proximoCodigo,
+destino: destino,
+distancia : distancia,
+passageiros : passageiros,
+valor: valorPorPessoa,
+total : valorTotal
+};
+listaDeViagens.push(novaViagem);
+proximoCodigo = proximoCodigo + 1;
+renderizarTabela();
+atualizarDashbord();
+limparFormulario();
+
+}
+function renderizarTabela (){
+  let corpoTabela = document.getElementById('tabela');
+  corpoTabela,innerHTML = "";
+
+  for(let i = 0; i < listaDeViagens.length; i = i +1){
+    let viagem = listaDeViagens[i];
+  
+    let linha = `
+  
+   <tr>
+          <td>${viagem.codigo}</td>
+          <td>${viagem.destino}</td>
+          <td>${viagem.distancia}</td>
+          <td>${viagem.passageiros}</td>
+          <td>R$ ${viagem.valor.toFixed(2)}</td>
+          <td>R$ ${viagem.total.toFixed(2)}</td>
+        </tr>
+      `;
+      corpoTabela.innerHTML += linha;
   }
-
-  let total = passageiros * valor;
-
-  let viagem = { codigo: codigo++, destino, distancia, passageiros, valor, total };
-  viagens.push(viagem);
-
-  renderTabela();
-  atualizarDashboard();
-  limpar();
 }
-
-function renderTabela() {
-  let tabela = document.getElementById("tabela");
-  tabela.innerHTML = "";
-
-  viagens.forEach(v => {
-    tabela.innerHTML += `
-      <tr>
-        <td>${v.codigo}</td>
-        <td>${v.destino}</td>
-        <td>${v.distancia}</td>
-        <td>${v.passageiros}</td>
-        <td>R$ ${v.valor.toFixed(2)}</td>
-        <td>R$ ${v.total.toFixed(2)}</td>
-      </tr>
-    `;
-  });
+function atualizarDashboard(){
+  let totalDeViagens = listaDeViagens.length;
+   let totalArrecadado = 0;
+  for (let i = 0; i < listaDeViagens.length; i = i +1) {
+    totalArrecadado = totalArrecadado + listaDeViagens[i].total;
+  }
+  let totalDePassageiros = 0;
+  for (let i = 0; i < listaDeViagens.length; i++) {
+    totalDePassageiros = totalDePassageiros + listaDeViagens[i].passageiros;
+  }
+ 
+  
+  document.getElementById("totalViagens").innerText    = totalDeViagens;
+  document.getElementById("totalValor").innerText      = "R$ " + totalArrecadado.toFixed(2);
+  document.getElementById("totalPassageiros").innerText = totalDePassageiros;
 }
-
-function atualizarDashboard() {
-  let totalViagens = viagens.length;
-  let totalValor = viagens.reduce((s, v) => s + v.total, 0);
-  let totalPassageiros = viagens.reduce((s, v) => s + v.passageiros, 0);
-
-  document.getElementById("totalViagens").innerText = totalViagens;
-  document.getElementById("totalValor").innerText = "R$ " + totalValor.toFixed(2);
-  document.getElementById("totalPassageiros").innerText = totalPassageiros;
-}
-
-function limpar() {
-  document.getElementById("destino").value = "";
-  document.getElementById("distancia").value = "";
+function limparFormulario() {
+  document.getElementById("destino").value     = "";
+  document.getElementById("distancia").value   = "";
   document.getElementById("passageiros").value = "";
-  document.getElementById("valor").value = "";
+  document.getElementById("valor").value       = "";
 }
+
