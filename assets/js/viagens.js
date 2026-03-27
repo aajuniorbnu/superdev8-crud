@@ -29,7 +29,7 @@ total : valorTotal
 listaDeViagens.push(novaViagem);
 proximoCodigo = proximoCodigo + 1;
 renderizarTabela();
-atualizarDashbord();
+atualizarDashboard();
 limparFormulario();
 
 }
@@ -61,7 +61,7 @@ function atualizarDashboard(){
     totalArrecadado = totalArrecadado + listaDeViagens[i].total;
   }
   let totalDePassageiros = 0;
-  for (let i = 0; i < listaDeViagens.length; i++) {
+  for (let i = 0; i < listaDeViagens.length; i = i +1) {
     totalDePassageiros = totalDePassageiros + listaDeViagens[i].passageiros;
   }
  
